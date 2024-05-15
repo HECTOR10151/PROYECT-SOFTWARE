@@ -1,0 +1,46 @@
+/* Estilos para la Navbar */
+.navbar {
+    background-color: #333;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #ddd !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+}
+
+/* Estilos para el Contenido Principal */
+.container {
+    max-width: 900px; /* Aumenta el ancho máximo del contenedor */
+    padding: 2rem; /* Aumenta el padding interno */
+    margin-top: 2rem; /* Ajusta el margen superior */
+    margin-bottom: 2rem; /* Ajusta el margen inferior */
+}
+
+h1 {
+    font-size: 3rem; /* Aumenta el tamaño de la fuente del encabezado */
+}
+
+p {
+    font-size: 1.25rem; /* Aumenta el tamaño de la fuente del párrafo */
+}
+
+/* Estilos para el Footer */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
