@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Imagen/1.png" type="image/png">
-    <title>| RopaTech</title>
+    <title>| Acopio Institucional</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Iconos -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="diseño.css">
 </head>
 <body>
@@ -20,7 +19,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
@@ -31,46 +30,37 @@
                 </li>
             </ul>
         </div>
-    </nav>
-
-    <!-- Imagen de fondo -->
-    <div class="hero-image">
-        <div class="hero-text">
-            <h1>☘︎ RopaTech</h1><br>
-            <h2>Cuidamos el Medio Ambiente</h2>
-            <p>Somos la asociación civil sin fines de lucro, que promueve la educación ambiental y el reciclaje de ropa.</p>
-            <a class="btn btn-outline-light" href="empresa.html">Conocer más</a>
-        </div>
-    </div>
-
+    </nav>    
+    
     <!-- Contenido Principal -->
-    <div class="container my-5">
+    <div class="container-fluid my-5">
+        <div class="text-center mb-5">
+            <h1><b>Acopio Institucional 📍</b></h1>
+            <p>¡Encuentra centros de acopio cerca de ti!</p>
+        </div>
+        <hr>
+        <p class="text-center">⚠️ Para realizar la consulta y proporcionarte una respuesta, por favor completa los siguientes datos de tu dirección:</p>
+        <hr>
+        <br>
         <div class="row">
-            <div class="col-sm-12 col-md-6 mb-4"> <!-- Cambiado de col-md-6 a col-md-8 -->
-                <div class="card custom-card">
-                    <img src="Imagen/centro_acopio.jpg" class="card-img-top" alt="Acopio Institucional">
-                    <div class="card-body">
-                        <h5 class="card-title">Acopio Institucional</h5>
-                        <p class="card-text">Con este programa, contribuimos a concientizar de manera colectiva a las instituciones sobre la importancia del adecuado manejo de las prendas de vestir.</p>
-                        <a href="acopio.html" class="btn btn-outline-light">Conocer más</a>
-                    </div>
-                </div>
+            <div class="col-md-6" id="formulario">
+                <form id="buscarDireccion">
+                    <label for="calle">Calle:</label>
+                    <input type="text" id="calle" name="calle" required><br><br>
+                    <label for="numero">No. Exterior:</label>
+                    <input type="text" id="numero" name="numero" required><br><br>
+                    <label for="cp">Código Postal:</label>
+                    <input type="text" id="cp" name="cp" required><br><br>
+                    <label for="colonia">Colonia:</label>
+                    <input type="text" id="colonia" name="colonia" required><br><br>
+                    <button class="btn btn-outline-dark anc" type="submit">Buscar</button>
+                </form>
             </div>
-            <div class="col-sm-12 col-md-6 mb-4"> <!-- Cambiado de col-md-6 a col-md-8 -->
-                <div class="card custom-card">
-                    <img src="Imagen/ropa.jpg" class="card-img-top" alt="Sala de Prensa">
-                    <div class="card-body">
-                        <h5 class="card-title">Sala de Prensa</h5>
-                        <p class="card-text">Día Mundial del Reciclaje: la industria tiene un plan.</p>
-                        <a href="#" class="btn btn-outline-light">Conocer más</a>
-                    </div>
-                </div>
+            <div class="col-md-6 mapa" id="map">
+                <img class="mapita" src="https://cdn.pixabay.com/photo/2018/06/18/23/03/europe-3483539_1280.jpg">
             </div>
-            
         </div>
     </div>
-    
-    
 
     <!-- Footer -->
     <footer class="footer">
