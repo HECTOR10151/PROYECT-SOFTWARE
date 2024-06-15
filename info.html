@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Imagen/1.png" type="image/png">
-    <title>| Acopio Institucional</title>
+    <title>| Sobre Nosotros</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="src/diseño.css">
-    <link rel="stylesheet" href="src/estilos.css">
-    <script src="src/script.js" defer></script>
+    <link rel="stylesheet" href="/src/diseño.css">
 </head>
 <body>
+
+   
+    
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="index.html"><img src="Imagen/1.png" style="height: 50px;" alt="Logo1"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,47 +35,29 @@
         </div>
     </nav>    
     
-    <!-- Contenido Principal -->
-    <div class="container-fluid my-5">
-        <div class="text-center mb-5">
-            <h1><b>Acopio Institucional 📍</b></h1>
-            <p>¡Encuentra centros de acopio cerca de ti!</p>
+    <section id="sobrenosotros" class="container">
+        <h1 id="titulo_principal">Moda Sostenible</h1>
+        <p>El sector de la moda causa un impacto muy negativo en el medio ambiente. A continuación explicamos por qué es tan importante el reciclaje de ropa, y cuáles son las diferentes posibilidades para una moda sostenible.</p>
+        <h3>El coste medioambiental de producir ropa</h3>
+        <p>De manera global, la compra de ropa, calzado y productos textiles aumenta cada año. La industria, para cubrir esta demanda, usa recursos hídricos, contamina ríos, mares, acuíferos y tierras, y emite un 10 % de las emisiones totales de carbono de todo el mundo. Por otra parte, un 85 % de estos productos textiles acaban en vertederos.</p>
+        <h3>Datos del impacto ambiental del sector de la moda:</h3>
+        <ul>
+            <li>Para fabricar unos vaqueros se necesitan 7.500 litros de agua.</li>
+            <li>La industria textil gasta 93.000 millones de metros cúbicos de agua cada año.</li>
+            <li>La producción de ropa se duplicó entre 2000 y 2014.</li>
+        </ul>
+        <h3>Cómo Desechar Tu Ropa Usada</h3>
+        <ul>
+            <li>Puntos limpios de recogida de ropa instalados por los ayuntamientos</li>
+            <li>Puntos limpios de recogida de ropa de organizaciones no gubernamentales</li>
+            <li>Las propias tiendas de ropa recogen ropa usada,con campañas en las que se premia con descuentos la entrega de bolsas de ropa usada.</li>
+        </ul>
+        <div class="image-container">
+            <img src="Imagen/infograma.jpg" alt="Infografía de Reciclaje de Ropa" class="infografia">
         </div>
-        <hr>
-        <p class="text-center">⚠️ Para realizar la consulta y proporcionarte una respuesta, por favor completa los siguientes datos de tu dirección:</p>
-        <hr>
-        <br>
-        <div class="row">
-            <div class="col-md-5" id="formulario">
-                <form id="buscarDireccion" onsubmit="loadMap(event)">
-                    <div class="form-group">
-                        <label for="direccion">Dirección:</label>
-                        <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ej. Calle 123, Colonia" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="colonia">Colonia:</label>
-                        <input type="text" id="colonia" name="colonia" class="form-control" placeholder="Ej. Colonia" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="estado">Estado:</label>
-                        <input type="text" id="estado" name="estado" class="form-control" placeholder="Ej. Ciudad de México" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="codigoPostal">Código Postal:</label>
-                        <input type="text" id="codigoPostal" name="codigoPostal" class="form-control" placeholder="Ej. 12345" required>
-                    </div>
-                    <button class="btn btn-outline-dark anc" type="submit">Buscar</button>
-                </form>
-            </div>
-            <div class="col-md-7 mapa" id="mapContainer" style="height: 500px;">
-                <img src="Imagen/Mapa.png" alt="Mapa estático" id="staticMap" style="width: 100%; height: 100%;">
-                <div id="map" style="height: 100%; width: 100%; display: none;">
-                    <!-- El mapa de Google Maps se renderizará aquí -->
-                </div>
-            </div>
-        </div>
-    </div>
-    
+</section>    
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
