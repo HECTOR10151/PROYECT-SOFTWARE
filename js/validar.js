@@ -7,9 +7,22 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
 document.addEventListener('DOMContentLoaded', function() {
     var error = getParameterByName('error');
     if (error === '1') {
         document.getElementById('LLenarC').style.display = 'block';
     }
 });
+
+function redireccion(){
+    var isAdmin = getParameterByName('admin');
+    if (isAdmin === 'true') {
+        location.href = "./php/admin.php";
+    } else {
+        location.href = "./sesion.html";
+    }
+}
+function red(){
+    location.href = "formulario.html";
+}
