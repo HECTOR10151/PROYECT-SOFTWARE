@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>SESION</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='src/diseño.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <form class="login-form" action="./php/sesion.php" method="post">
+        <h2>Inicio de Sesión</h2>
+        <label for="username">Usuario:</label>
+        <input type="text" id="user" name="user" required>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="pass" name="pass" required>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
