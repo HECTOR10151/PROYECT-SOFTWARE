@@ -12,9 +12,11 @@ if (mysqli_num_rows($q) > 0) {
     // Inicio de sesión exitoso, redirigir a la página principal
     $_SESSION['user'] = $user; // Guardar el nombre de usuario en la sesión
     if ($user == "admin") {
+        $_SESSION['admin'] = true;
         header("Location: ./admin.php");
     } else {
-        header("Location: ../index.html");
+        $ID = mysqli_fetch_array($q)['ID'];
+        header("Location: ./cliente.php?id=$ID");
     }
     exit();
 } else {

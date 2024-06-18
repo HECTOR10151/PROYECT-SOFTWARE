@@ -26,3 +26,9 @@ function redireccion(){
 function red(){
     location.href = "formulario.html";
 }
+function out(){
+    location.href = "../logout.php";
+}
+function re(id) {
+    location.href = "./cliente.php?id=" + id;
+}
