@@ -46,31 +46,49 @@ $row = mysqli_fetch_array($q); //Obtenemos la fila de la consulta
             </ul>
         </div>
     </nav>
-
-    <section>
+    <div class="banner">
+        <br>
         <h1>Actualizar</h1>
-        <div>
-            <fieldset class="">
-                <!-- <legend class="alum"><b>Cliente</b>-->
-                <form action="update.php?id=<?php echo $id ?>" method="POST">
+    </div>
+    <div class="formularioNuevoUsuario">
+        <form action="update.php?id=<?php echo $id ?>" method="POST">
+            <div class="card-body nuevoUsuario">
+                <div class="form-group">
                     <label for="user">Usuario</label>
-                    <input type="text" name="user" value="<?php echo $row['USUARIO']; ?>"><br>
-                    <label for="name">Nombre</label>
-                    <input type="text" name="name" value="<?php echo $row['NAME']; ?>"><br>
-                    <label for="apellido">Apellido</label>
-                    <input type="text" name="apellido" value="<?php echo $row['APELLIDO']; ?>"><br>
+                    <input class="form-control" type="text" name="user" value="<?php echo $row['USUARIO']; ?>"><br>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="name">Nombre</label>
+                        <input class="form-control" type="text" name="name" value="<?php echo $row['NAME']; ?>"><br>
+                    </div>
+                    <div class="col">
+                        <label for="apellido">Apellido</label>
+                        <input class="form-control" type="text" name="apellido" value="<?php echo $row['APELLIDO']; ?>"><br>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
                     <label for="direccion">Direccion</label>
-                    <input type="text" name="direccion" value="<?php echo $row['DIRECCION']; ?>"><br>
+                    <input class="form-control" type="text" name="direccion" value="<?php echo $row['DIRECCION']; ?>"><br>
+                </div>
+                <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" name="email" value="<?php echo $row['EMAIL']; ?>"><br>
+                    <input class="form-control" type="text" name="email" value="<?php echo $row['EMAIL']; ?>"><br>
+                </div>
+                <div class="form-group">
+
                     <label for="telefono">Telefono</label>
-                    <input type="text" name="telefono" value="<?php echo $row['TELEFONO']; ?>"><br>
+                    <input class="form-control" type="text" name="telefono" value="<?php echo $row['TELEFONO']; ?>"><br>
+                </div>
+                <div class="form-group">
                     <button type="submit">Actualizar</button>
-                    <button type="button" onclick="redireccion()">Cancelar</button>
-                </form>
-                <!-- </legend>-->
-        </div>
-    </section>
+                    <button type="button" class="btn btn-primary" id="botonInicio" onclick="redireccion()">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
     <script>
         function redireccion() {
             location.href = "admin.php";
@@ -93,8 +111,10 @@ $row = mysqli_fetch_array($q); //Obtenemos la fila de la consulta
                 <i class="bx bxl-tiktok social_icon"></i>
             </a>
             <br>
-            <p class="mb-0">RopaTech - Transformando moda en sostenibilidad. © 2024 Todos los derechos reservados. 
-                <b><h6><a class="social_link tam" href="#">Aviso de privacidad</a> | <a class="social_link tam" href="#">Términos de Servicio</a> | <a class="social_link tam" href="#">Contáctanos</a></h6></b>
+            <p class="mb-0">RopaTech - Transformando moda en sostenibilidad. © 2024 Todos los derechos reservados.
+                <b>
+                    <h6><a class="social_link tam" href="#">Aviso de privacidad</a> | <a class="social_link tam" href="#">Términos de Servicio</a> | <a class="social_link tam" href="#">Contáctanos</a></h6>
+                </b>
             </p>
         </div>
     </footer>
