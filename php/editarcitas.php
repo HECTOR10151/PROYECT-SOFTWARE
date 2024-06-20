@@ -60,15 +60,17 @@ $rowCliente = mysqli_fetch_array($qCliente);
     </nav>
 
     <div class="banner">
-        <br>
+        <br><br>
         <h1>Editar cita</h1>
     </div>
 
     <div class="formularioNuevoUsuario">
+    
         <form action="updatecitas.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $rowCita['IDcitas']; ?>">
+        <div class="card-body nuevoUsuario"> 
+        <input type="hidden" name="id" value="<?php echo $rowCita['IDcitas']; ?>">
             <div class="form-group">
-                <label for="usuario"> Cita del usuario: <?php echo $rowCliente['USUARIO']; ?></label>
+                <h4 for="usuario"> Cita del usuario: <?php echo $rowCliente['USUARIO']; ?></h4>
             </div>
 
             <div class="form-grop">
@@ -90,7 +92,7 @@ $rowCliente = mysqli_fetch_array($qCliente);
             <div class="form-row">
                 <div class="col">
                     <label for="estatus">Estatus:</label>
-                    <select id="estatus" name="estatus">
+                    <select class="custom-select" id="estatus" name="estatus">
                         <option value="PENDIENTE" <?php if ($rowCita['ESTATUS'] == 'PENDIENTE') echo 'selected'; ?>>Pendiente</option>
                         <option value="COMPLETADO" <?php if ($rowCita['ESTATUS'] == 'COMPLETADO') echo 'selected'; ?>>Completado</option>
                     </select>
@@ -101,9 +103,11 @@ $rowCliente = mysqli_fetch_array($qCliente);
                 </div>
             </div>
             <div class="form-group">    
-                <button type="submit">Actualizar</button>
-                <button type="button"  class="btn btn-primary" id="botonInicio" onclick="redireccion()">Cancelar</button>
+                <button type="submit" class="btn btn-primary" id="botonInicio">Actualizar</button>
+                <button type="button"  class="btn btn-danger" onclick="redireccion()">Cancelar</button>
             </div>
+        </div>
+            
         </form>
     </div>
 

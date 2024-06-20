@@ -55,40 +55,43 @@ $row = mysqli_fetch_array($q);
         </div>
     </nav>
     <div class="banner">
-        <br>
+        <br><br>
         <h1>Generar cita</h1>
     </div>
 
     <div class="formularioNuevoUsuario">
         <form action="./citas.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
-            
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Direccion" name="direccion"><br>
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="date" name="date" ><br>
-            </div>
-            <div class="form-row">
-                <div class="col">
-                    <input class="form-control" type="text" placeholder="Material" name="material"><br>
+            <div class="card-body nuevoUsuario">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Direccion" name="direccion"><br>
                 </div>
-                <div class="col">
-                    <input class="form-control" type="number" placeholder="Kilogramos" name="kilos"><br>
+                <div class="form-group">
+                    <input class="form-control" type="date" name="date"><br>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <input class="form-control" type="text" placeholder="Material" name="material"><br>
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="number" placeholder="Kilogramos" name="kilos"><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="tel" placeholder="Telefono" name="telefono"><br>
+                </div>
+                <div class="form-group">
+
+                    <button type="submit" class="btn btn-primary" id="botonInicio"> Agendar cita</button>
+                    <button type="button" class="btn btn-danger" onclick="re(<?php echo $id; ?>)">Cancelar</button>
                 </div>
             </div>
-            <div class="form-group">
-                <input class="form-control" type="tel" placeholder="Telefono" name="telefono"><br>
-            </div>
-            <div class="form-group">
-                
-                <button type="submit" class="btn btn-primary" id="botonInicio" > Agendar cita</button>
-                <button type="button" class="btn btn-danger" onclick="re(<?php echo $id; ?>)">Cancelar</button>
-            </div>
+
+
         </form>
     </div>
     <div>
-        
+
     </div>
     <script>
         function re(id) {

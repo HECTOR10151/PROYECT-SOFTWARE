@@ -84,7 +84,7 @@ $row = mysqli_fetch_array($q); //Obtenemos la fila de la consulta
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary" id="botonInicio">Actualizar</button>
-                    <button type="button" class="btn btn-primary" id="botonInicio" onclick="redireccion()">Cancelar</button>
+                    <button type="button" class="btn btn-danger"  onclick="redireccion()">Cancelar</button>
                 </div>
             </div>
         </form>

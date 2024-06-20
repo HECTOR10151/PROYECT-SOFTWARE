@@ -177,14 +177,14 @@ body{
     background-size: cover;
     position: relative;
     color: #333; 
-    height: 100px;
+    height: 150px;
     text-align: center;
-    align-items: cent;
+    align-items: center;
     font-weight: bolder;
 }
 
 .formularioNuevoUsuario{
-    
+    padding-top: 4rem;
     position: relative;
     text-align: center;
     display: flex;
