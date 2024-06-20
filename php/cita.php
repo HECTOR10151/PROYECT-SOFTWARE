@@ -54,24 +54,41 @@ $row = mysqli_fetch_array($q);
             </ul>
         </div>
     </nav>
+    <div class="banner">
+        <br>
+        <h1>Generar cita</h1>
+    </div>
 
-    <h1>Generar Cita</h1>
-    <div>
+    <div class="formularioNuevoUsuario">
         <form action="./citas.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <label for="direccion">Direccion</label>
-            <input type="text" name="direccion" required><br>
-            <label for="fecha">Fecha</label>
-            <input type="date" name="date" required><br>
-            <label for="material">Material</label>
-            <input type="text" name="material" required><br>
-            <label for="kilos">kilos</label>
-            <input type="number" name="kilos" required><br>
-            <button type="submit">CREAR</button>
+            
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Direccion" name="direccion"><br>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="date" name="date" ><br>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="Material" name="user"><br>
+                </div>
+                <div class="col">
+                    <input class="form-control" type="number" placeholder="Kilogramos" name="pass"><br>
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="tel" placeholder="Telefono" name="telefono"><br>
+            </div>
+            <div class="form-group">
+                
+                <button type="submit" class="btn btn-primary" id="botonInicio" > Agendar cita</button>
+                <button type="button" class="btn btn-primary" onclick="re(<?php echo $id; ?>)">Cancelar</button>
+            </div>
         </form>
     </div>
     <div>
-        <button type="button" onclick="re(<?php echo $id; ?>)">Cancelar</button>
+        
     </div>
     <script>
         function re(id) {
@@ -95,8 +112,10 @@ $row = mysqli_fetch_array($q);
                 <i class="bx bxl-tiktok social_icon"></i>
             </a>
             <br>
-            <p class="mb-0">RopaTech - Transformando moda en sostenibilidad. © 2024 Todos los derechos reservados. 
-                <b><h6><a class="social_link tam" href="#">Aviso de privacidad</a> | <a class="social_link tam" href="#">Términos de Servicio</a> | <a class="social_link tam" href="#">Contáctanos</a></h6></b>
+            <p class="mb-0">RopaTech - Transformando moda en sostenibilidad. © 2024 Todos los derechos reservados.
+                <b>
+                    <h6><a class="social_link tam" href="#">Aviso de privacidad</a> | <a class="social_link tam" href="#">Términos de Servicio</a> | <a class="social_link tam" href="#">Contáctanos</a></h6>
+                </b>
             </p>
         </div>
     </footer>

@@ -94,8 +94,8 @@ $row = mysqli_fetch_array($q);
         </table>
     </div>
     <div class="btn-group" role="group">
-        <button type="button" onclick="cita(<?php echo $id; ?>)">Crear cita</button>
-        <button type="button" onclick="redireccion()">Cerrar sesion</button>
+        <button type="button" class="btn btn-secondary" onclick="cita(<?php echo $id; ?>)">Crear cita</button>
+        <button type="button" class="btn btn-secondary" onclick="redireccion()">Cerrar sesion</button>
     </div>
 
 
