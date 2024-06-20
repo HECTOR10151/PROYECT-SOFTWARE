@@ -28,7 +28,7 @@ $row = mysqli_fetch_array($q); //Obtenemos la fila de la consulta
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="index.html"><img src="../Imagen/1.png" style="height: 50px;" alt="Logo1"></a>
+        <a class="navbar-brand" href="../index.html"><img src="../Imagen/1.png" style="height: 50px;" alt="Logo1"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -83,7 +83,7 @@ $row = mysqli_fetch_array($q); //Obtenemos la fila de la consulta
                     <input class="form-control" type="text" name="telefono" value="<?php echo $row['TELEFONO']; ?>"><br>
                 </div>
                 <div class="form-group">
-                    <button type="submit">Actualizar</button>
+                    <button type="submit" class="btn btn-primary" id="botonInicio">Actualizar</button>
                     <button type="button" class="btn btn-primary" id="botonInicio" onclick="redireccion()">Cancelar</button>
                 </div>
             </div>

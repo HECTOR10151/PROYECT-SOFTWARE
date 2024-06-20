@@ -7,7 +7,7 @@
     if($con->connect_error){
         die("Error en la conexión: " . $con->connect_error);
     }else{
-        echo "Conexión exitosa";
+        // echo "Conexión exitosa";
     }
     return $con;//Retornamos la conexión
 ?>

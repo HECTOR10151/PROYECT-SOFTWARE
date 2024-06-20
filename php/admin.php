@@ -17,6 +17,7 @@ $qCitas = mysqli_query($con, $sqlCitas);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,13 +27,13 @@ $qCitas = mysqli_query($con, $sqlCitas);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="../src/diseñosForms.css">
 </head>
+
 <body>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="index.html"><img src="../Imagen/1.png" style="height: 50px;" alt="Logo1"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="../index.html"><img src="../Imagen/1.png" style="height: 50px;" alt="Logo1"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -49,27 +50,29 @@ $qCitas = mysqli_query($con, $sqlCitas);
             </ul>
         </div>
     </nav>
-
-    <h1>Bienvenido admin</h1>
+<div class="titulo">
+<h1 >Bienvenido admin</h1>
+</div>
     
-    <div>
+
+    <div class="contenedores">
         <h2>Clientes</h2>
         <div>
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Usuario</th>    
+                        <th scope="col">Usuario</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">Dirección</th>
                         <th scope="col">Email</th>
                         <th scope="col">Teléfono</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col" colspan="2">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while($rowCliente = mysqli_fetch_array($qClientes)): ?>
+                    <?php while ($rowCliente = mysqli_fetch_array($qClientes)) : ?>
                         <tr>
                             <td scope="row"><?php echo $rowCliente['ID']; ?></td>
                             <td><?php echo $rowCliente['USUARIO']; ?></td>
@@ -84,11 +87,12 @@ $qCitas = mysqli_query($con, $sqlCitas);
                     <?php endwhile; ?>
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" id="botonInicio" onclick="redirAgregarUsuario()">Agregar Usuario</button>
+            <button type="button" class="btn btn-danger" id="botonInicio" onclick="redirAgregarUsuario()">Agregar Usuario</button>
         </div>
     </div>
-    
-    <div>
+
+    <div class="contenedores">
+        <br><br>
         <h2>Citas</h2>
         <div>
             <table class="table table-hover">
@@ -102,11 +106,11 @@ $qCitas = mysqli_query($con, $sqlCitas);
                         <th scope="col">Material</th>
                         <th scope="col">Kilos</th>
                         <th scope="col">Estatus</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col" colspan="2">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while($rowCita = mysqli_fetch_array($qCitas)): ?>
+                    <?php while ($rowCita = mysqli_fetch_array($qCitas)) : ?>
                         <tr>
                             <td scope="row"><?php echo $rowCita['IDcitas']; ?></td>
                             <td><?php echo $rowCita['ID']; ?></td>
@@ -116,19 +120,20 @@ $qCitas = mysqli_query($con, $sqlCitas);
                             <td><?php echo $rowCita['MATERIAL']; ?></td>
                             <td><?php echo $rowCita['KILOS']; ?></td>
                             <td><?php echo $rowCita['ESTATUS']; ?></td>
-                            <td><a href="editarcitas.php?id=<?php echo $rowCita['IDcitas']; ?>">Editar</a></td>
-                            <td><a href="eliminarcitas.php?id=<?php echo $rowCita['IDcitas']; ?>" onclick="return confirmDelete()">Eliminar</a></td>
+                            <td><a class="btn btn-primary" id="botonInicio" href="editarcitas.php?id=<?php echo $rowCita['IDcitas']; ?>">Editar</a></td>
+                            <td><a class="btn btn-primary" id="botonInicio" href="eliminarcitas.php?id=<?php echo $rowCita['IDcitas']; ?>" onclick="return confirmDelete()">Eliminar</a></td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
             </table>
+            <br><br>
+        <button type="button" class="btn btn-danger"  onclick="redireccion()">Cerrar sesión</button>
+    
         </div>
     </div>
+
     
-    <div>
-        <button type="button" class="btn btn-primary" id="botonInicio" onclick="redireccion()">Cerrar sesión</button>
-    </div>
-    
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -146,17 +151,21 @@ $qCitas = mysqli_query($con, $sqlCitas);
                 <i class="bx bxl-tiktok social_icon"></i>
             </a>
             <br>
-            <p class="mb-0">RopaTech - Transformando moda en sostenibilidad. © 2024 Todos los derechos reservados. 
-                <b><h6><a class="social_link tam" href="#">Aviso de privacidad</a> | <a class="social_link tam" href="#">Términos de Servicio</a> | <a class="social_link tam" href="#">Contáctanos</a></h6></b>
+            <p class="mb-0">RopaTech - Transformando moda en sostenibilidad. © 2024 Todos los derechos reservados.
+                <b>
+                    <h6><a class="social_link tam" href="#">Aviso de privacidad</a> | <a class="social_link tam" href="#">Términos de Servicio</a> | <a class="social_link tam" href="#">Contáctanos</a></h6>
+                </b>
             </p>
         </div>
     </footer>
     <script src="../js/admin.js"></script>
 </body>
+
 </html>
 
 <?php
-function obtenerUsuario($idCliente, $con) {
+function obtenerUsuario($idCliente, $con)
+{
     $sql = "SELECT USUARIO FROM clientes WHERE ID = '$idCliente'";
     $q = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($q);

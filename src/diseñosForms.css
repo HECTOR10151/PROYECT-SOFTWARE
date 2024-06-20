@@ -192,6 +192,17 @@ body{
     align-items: center;
 }
 
+.contenedores{
+    padding-left: 4rem;
+    padding-right: 4rem;
+    
+}
+
+.titulo{
+    text-align: center;
+    font-weight: bolder;
+}
+
 
 #botonInicio{
     background-color: #027333;

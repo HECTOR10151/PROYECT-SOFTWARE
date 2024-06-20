@@ -36,7 +36,7 @@ $row = mysqli_fetch_array($q);
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="index.html"><img src="../Imagen/1.png" style="height: 50px;" alt="Logo1"></a>
+        <a class="navbar-brand" href="../index.html"><img src="../Imagen/1.png" style="height: 50px;" alt="Logo1"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -71,10 +71,10 @@ $row = mysqli_fetch_array($q);
             </div>
             <div class="form-row">
                 <div class="col">
-                    <input class="form-control" type="text" placeholder="Material" name="user"><br>
+                    <input class="form-control" type="text" placeholder="Material" name="material"><br>
                 </div>
                 <div class="col">
-                    <input class="form-control" type="number" placeholder="Kilogramos" name="pass"><br>
+                    <input class="form-control" type="number" placeholder="Kilogramos" name="kilos"><br>
                 </div>
             </div>
             <div class="form-group">
@@ -83,7 +83,7 @@ $row = mysqli_fetch_array($q);
             <div class="form-group">
                 
                 <button type="submit" class="btn btn-primary" id="botonInicio" > Agendar cita</button>
-                <button type="button" class="btn btn-primary" onclick="re(<?php echo $id; ?>)">Cancelar</button>
+                <button type="button" class="btn btn-danger" onclick="re(<?php echo $id; ?>)">Cancelar</button>
             </div>
         </form>
     </div>

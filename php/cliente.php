@@ -36,7 +36,7 @@ $row = mysqli_fetch_array($q);
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="index.html"><img src="../Imagen/1.png" style="height: 50px;" alt="Logo1"></a>
+        <a class="navbar-brand" href="../index.html"><img src="../Imagen/1.png" style="height: 50px;" alt="Logo1"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,7 +59,7 @@ $row = mysqli_fetch_array($q);
         <h1>Hola bienvenido <?php echo $row['USUARIO']; ?>!!!</h1>
     </div>
 
-    <div>
+    <div class="contenerdor">
         <h2>Historial de citas</h2>
 
         <table class="table table-hover">
@@ -91,7 +91,7 @@ $row = mysqli_fetch_array($q);
     </div>
     <div class="btn-group" role="group">
         <button type="button" class="btn btn-secondary" onclick="cita(<?php echo $id; ?>)">Crear cita</button>
-        <button type="button" class="btn btn-secondary" onclick="redireccion()">Cerrar sesion</button>
+        <button type="button" class="btn btn-danger" onclick="redireccion()">Cerrar sesion</button>
     </div>
 
 
