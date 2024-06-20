@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="src/diseñosForms.css">
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -32,34 +34,50 @@
             </ul>
         </div>
     </nav>
-    
+
     <section>
-        <h1>Agregar Usuario</h1>
-        <div>
-            <fieldset class="">
-               <!-- <legend class="alum"><b>Cliente</b>-->
-                    <form action="./php/agregar.php" method="POST">
-                        <label for="user">Usuario</label>
-                        <input type="text" name="user"><br>
-                        <label for="user">Password</label>
-                        <input type="password" name="pass"><br>
-                        <label for="name">Nombre</label>
-                        <input type="text" name="name"><br>
-                        <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido"><br>
-                        <label for="direccion">Direccion</label>
-                        <input type="text" name="direccion" ><br>
-                        <label for="email">Email</label>
-                        <input type="email" name="email"><br>
-                        <label for="telefono">Telefono</label>
-                        <input type="tel" name="telefono"><br>
-                        <button type="submit">CREAR</button>
-                        
-                    </form>
-               <!-- </legend>-->
+
+        <div class="formularioNuevoUsuario">
+            <form action="./php/agregar.php" method="POST">
+                <div class="card-body nuevoUsuario">
+                    <h2>Agregar Usuario</h2>
+                    <br>
+                    <div class="form-row">
+                        <div class="col">
+                            <input class="form-control" type="text" placeholder="Usuario" name="user"><br>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="password" placeholder="Contraseña" name="pass"><br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Nombre" name="name"><br>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Apellido" name="apellido"><br>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Direccion" name="direccion"><br>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="email" placeholder="Email" name="email"
+                            placeholder="ej: usuario@ropatech.com"><br>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="tel" placeholder="Telefono" name="telefono"><br>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="botonInicio" type="submit">Registrarte</button>
+                        <button type="button" class="btn btn-primary"id="botonInicio" onclick="redireccion()">Cancelar</button>
+                    </div>
+                </div>
+
+
+            </form>
+
         </div>
         <div>
-            <button type="button" onclick="redireccion()">Cancelar</button>
+
         </div>
     </section>
 
@@ -79,15 +97,19 @@
                 <i class="bx bxl-tiktok social_icon"></i>
             </a>
             <br>
-            <p class="mb-0">RopaTech - Transformando moda en sostenibilidad. © 2024 Todos los derechos reservados. 
-                <b><h6><a class="social_link tam" href="#">Aviso de privacidad</a> | <a class="social_link tam" href="#">Términos de Servicio</a> | <a class="social_link tam" href="#">Contáctanos</a></h6></b>
+            <p class="mb-0">RopaTech - Transformando moda en sostenibilidad. © 2024 Todos los derechos reservados.
+                <b>
+                    <h6><a class="social_link tam" href="#">Aviso de privacidad</a> | <a class="social_link tam"
+                            href="#">Términos de Servicio</a> | <a class="social_link tam" href="#">Contáctanos</a></h6>
+                </b>
             </p>
         </div>
     </footer>
-    
+
     <script>
-        
+
     </script>
     <script src="./js/validar.js"></script>
 </body>
+
 </html>

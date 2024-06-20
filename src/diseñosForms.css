@@ -1,5 +1,6 @@
 body{
     background-color: #F2F2F2;
+    font-family: 'Arial', sans-serif;
 }
 
 /* Estilos para la Navbar */
@@ -162,6 +163,20 @@ body{
     bottom: 0;
     width: 100%;
     height: auto;
+}
+
+.nuevoUsuario{
+    background-color: #D4D4D4;
+    color:#333;
+}
+
+.formularioNuevoUsuario{
+    
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
