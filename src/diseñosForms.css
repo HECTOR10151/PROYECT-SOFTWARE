@@ -170,6 +170,19 @@ body{
     color:#333;
 }
 
+.banner{
+    background-image: url('/Imagen/Banner.jpeg'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: #333; 
+    height: 100px;
+    text-align: center;
+    align-items: cent;
+    font-weight: bolder;
+}
+
 .formularioNuevoUsuario{
     
     position: relative;

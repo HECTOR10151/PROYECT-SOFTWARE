@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACTUALIZAR</title>
+    <title>Registro</title>
     <link rel="icon" href="Imagen/1.png" type="image/png">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -35,51 +35,55 @@
         </div>
     </nav>
 
-    <section>
+    <div class="banner">     
+        <br>   
+        <h1>Registro</h1>
+    </div>
 
-        <div class="formularioNuevoUsuario">
-            <form action="./php/agregar.php" method="POST">
-                <div class="card-body nuevoUsuario">
-                    <h2>Agregar Usuario</h2>
-                    <br>
-                    <div class="form-row">
-                        <div class="col">
-                            <input class="form-control" type="text" placeholder="Usuario" name="user"><br>
-                        </div>
-                        <div class="col">
-                            <input class="form-control" type="password" placeholder="Contraseña" name="pass"><br>
-                        </div>
+    <div class="formularioNuevoUsuario">
+        <form action="./php/agregar.php" method="POST">
+            <div class="card-body nuevoUsuario">
+                
+                <h4>Ingresa tus datos</h4>
+                <br>
+                <div class="form-row">
+                    <div class="col">
+                        <input class="form-control" type="text" placeholder="Usuario" name="user"><br>
                     </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Nombre" name="name"><br>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Apellido" name="apellido"><br>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Direccion" name="direccion"><br>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="email" placeholder="Email" name="email"
-                            placeholder="ej: usuario@ropatech.com"><br>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="tel" placeholder="Telefono" name="telefono"><br>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" id="botonInicio" type="submit">Registrarte</button>
-                        <button type="button" class="btn btn-primary"id="botonInicio" onclick="redireccion()">Cancelar</button>
+                    <div class="col">
+                        <input class="form-control" type="password" placeholder="Contraseña" name="pass"><br>
                     </div>
                 </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Nombre" name="name"><br>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Apellido" name="apellido"><br>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Direccion" name="direccion"><br>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="email" placeholder="Email" name="email"
+                        placeholder="ej: usuario@ropatech.com"><br>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="tel" placeholder="Telefono" name="telefono"><br>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" id="botonInicio" type="submit">Registrarte</button>
+                    <button type="button" class="btn btn-primary" id="botonInicio"
+                        onclick="redireccion()">Cancelar</button>
+                </div>
+            </div>
 
 
-            </form>
+        </form>
 
-        </div>
-        <div>
+    </div>
+    <div>
 
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
