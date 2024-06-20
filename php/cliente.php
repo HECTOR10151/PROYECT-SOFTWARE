@@ -55,32 +55,35 @@ $row = mysqli_fetch_array($q);
         </div>
     </nav>
 
+    <div class="banner">
+        <br>
+        <h1>Editar citas</h1>
+    </div>
 
     <div>
         <h1>Hola bienvenido <?php echo $row['USUARIO']; ?>!!!</h1>
     </div>
-    <div>
-        <button type="button" onclick="cita(<?php echo $id; ?>)">Crear cita</button>
-    </div>
 
     <div>
         <h2>Historial de citas</h2>
-    </div>
-    <div>
-        <table>
-            <tr>
-                <th>Dirección</th>
-                <th>Fecha</th>
-                <th>Material</th>
-                <th>Kilos</th>
-                <th>Estatus</th>
-            </tr>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Material</th>
+                    <th scope="col">Kilos</th>
+                    <th scope="col">Estatus</th>
+                </tr>
+            </thead>
+
             <?php
             $sql = "SELECT * FROM citas WHERE ID = '$id'";
             $q = mysqli_query($con, $sql);
             while ($row = mysqli_fetch_array($q)) {
                 echo "<tr>";
-                echo "<td>" . $row['DIRECCION'] . "</td>";
+                echo "<td scope='row'>" . $row['DIRECCION'] . "</td>";
                 echo "<td>" . $row['FECHA'] . "</td>";
                 echo "<td>" . $row['MATERIAL'] . "</td>";
                 echo "<td>" . $row['KILOS'] . "</td>";
@@ -89,17 +92,21 @@ $row = mysqli_fetch_array($q);
             }
             ?>
         </table>
-        <div>
-            <button type="button" onclick="redireccion()">Cerrar sesion</button>
-        </div>
-        <script src="../js/admin.js"></script>
-        <script>
-            function cita(id) {
-                location.href = "./cita.php?id=" + id;
-            }
-        </script>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" onclick="cita(<?php echo $id; ?>)">Crear cita</button>
+        <button type="button" onclick="redireccion()">Cerrar sesion</button>
+    </div>
 
-        <!-- Footer -->
+
+    <script src="../js/admin.js"></script>
+    <script>
+        function cita(id) {
+            location.href = "./cita.php?id=" + id;
+        }
+    </script>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <a href="https://www.instagram.com/" target="_blank" class="social_link" id="f1">
@@ -115,8 +122,10 @@ $row = mysqli_fetch_array($q);
                 <i class="bx bxl-tiktok social_icon"></i>
             </a>
             <br>
-            <p class="mb-0">RopaTech - Transformando moda en sostenibilidad. © 2024 Todos los derechos reservados. 
-                <b><h6><a class="social_link tam" href="#">Aviso de privacidad</a> | <a class="social_link tam" href="#">Términos de Servicio</a> | <a class="social_link tam" href="#">Contáctanos</a></h6></b>
+            <p class="mb-0">RopaTech - Transformando moda en sostenibilidad. © 2024 Todos los derechos reservados.
+                <b>
+                    <h6><a class="social_link tam" href="#">Aviso de privacidad</a> | <a class="social_link tam" href="#">Términos de Servicio</a> | <a class="social_link tam" href="#">Contáctanos</a></h6>
+                </b>
             </p>
         </div>
     </footer>

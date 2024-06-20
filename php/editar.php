@@ -48,7 +48,7 @@ $row = mysqli_fetch_array($q); //Obtenemos la fila de la consulta
     </nav>
     <div class="banner">
         <br>
-        <h1>Actualizar</h1>
+        <h1>Editar usuario</h1>
     </div>
     <div class="formularioNuevoUsuario">
         <form action="update.php?id=<?php echo $id ?>" method="POST">
