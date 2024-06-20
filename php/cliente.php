@@ -55,11 +55,12 @@ $row = mysqli_fetch_array($q);
         </div>
     </nav>
 
-    <div>
-        <h1>Hola bienvenido <?php echo $row['USUARIO']; ?>!!!</h1>
+    <div style="text-align: center;">
+        <br>
+        <h1>Bienvenido <?php echo $row['USUARIO']; ?>!!!</h1>
     </div>
 
-    <div class="contenerdor">
+    <div class="contenedores">
         <h2>Historial de citas</h2>
 
         <table class="table table-hover">
@@ -88,11 +89,12 @@ $row = mysqli_fetch_array($q);
                 ?>
             </tbody>
         </table>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-secondary" onclick="cita(<?php echo $id; ?>)">Crear cita</button>
+            <button type="button" class="btn btn-danger" onclick="redireccion()">Cerrar sesion</button>
+        </div>
     </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-secondary" onclick="cita(<?php echo $id; ?>)">Crear cita</button>
-        <button type="button" class="btn btn-danger" onclick="redireccion()">Cerrar sesion</button>
-    </div>
+
 
 
     <script src="../js/admin.js"></script>

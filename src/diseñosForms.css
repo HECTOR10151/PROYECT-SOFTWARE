@@ -38,7 +38,7 @@ body{
 }
 
 .card{
-    background-image: url('/Imagen/reciclaje_ropa.jpg'); 
+    background-image: url('../Imagen/reciclaje_ropa.jpg'); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -171,7 +171,7 @@ body{
 }
 
 .banner{
-    background-image: url('/Imagen/Banner.jpeg'); 
+    background-image: url('../Imagen/Banner.jpeg'); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
