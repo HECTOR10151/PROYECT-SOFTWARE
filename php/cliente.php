@@ -55,11 +55,6 @@ $row = mysqli_fetch_array($q);
         </div>
     </nav>
 
-    <div class="banner">
-        <br>
-        <h1>Editar citas</h1>
-    </div>
-
     <div>
         <h1>Hola bienvenido <?php echo $row['USUARIO']; ?>!!!</h1>
     </div>
@@ -77,20 +72,21 @@ $row = mysqli_fetch_array($q);
                     <th scope="col">Estatus</th>
                 </tr>
             </thead>
-
-            <?php
-            $sql = "SELECT * FROM citas WHERE ID = '$id'";
-            $q = mysqli_query($con, $sql);
-            while ($row = mysqli_fetch_array($q)) {
-                echo "<tr>";
-                echo "<td scope='row'>" . $row['DIRECCION'] . "</td>";
-                echo "<td>" . $row['FECHA'] . "</td>";
-                echo "<td>" . $row['MATERIAL'] . "</td>";
-                echo "<td>" . $row['KILOS'] . "</td>";
-                echo "<td>" . $row['ESTATUS'] . "</td>";
-                echo "</tr>";
-            }
-            ?>
+            <tbody>
+                <?php
+                $sql = "SELECT * FROM citas WHERE ID = '$id'";
+                $q = mysqli_query($con, $sql);
+                while ($row = mysqli_fetch_array($q)) {
+                    echo "<tr>";
+                    echo "<td scope='row'>" . $row['DIRECCION'] . "</td>";
+                    echo "<td>" . $row['FECHA'] . "</td>";
+                    echo "<td>" . $row['MATERIAL'] . "</td>";
+                    echo "<td>" . $row['KILOS'] . "</td>";
+                    echo "<td>" . $row['ESTATUS'] . "</td>";
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
         </table>
     </div>
     <div class="btn-group" role="group">

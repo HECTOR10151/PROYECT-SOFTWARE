@@ -55,60 +55,60 @@ $qCitas = mysqli_query($con, $sqlCitas);
     <div>
         <h2>Clientes</h2>
         <div>
-            <table>
+            <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Usuario</th>    
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Dirección</th>
-                        <th>Email</th>
-                        <th>Teléfono</th>
-                        <th>Acciones</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Usuario</th>    
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php while($rowCliente = mysqli_fetch_array($qClientes)): ?>
                         <tr>
-                            <td><?php echo $rowCliente['ID']; ?></td>
+                            <td scope="row"><?php echo $rowCliente['ID']; ?></td>
                             <td><?php echo $rowCliente['USUARIO']; ?></td>
                             <td><?php echo $rowCliente['NAME']; ?></td>
                             <td><?php echo $rowCliente['APELLIDO']; ?></td>
                             <td><?php echo $rowCliente['DIRECCION']; ?></td>
                             <td><?php echo $rowCliente['EMAIL']; ?></td>
                             <td><?php echo $rowCliente['TELEFONO']; ?></td>
-                            <td><a href="editar.php?id=<?php echo $rowCliente['ID']; ?>">Editar</a></td>
-                            <td><a href="eliminar.php?id=<?php echo $rowCliente['ID']; ?>" onclick="return confirmDelete()">Eliminar</a></td>
+                            <td><a class="btn btn-primary" id="botonInicio" href="editar.php?id=<?php echo $rowCliente['ID']; ?>">Editar</a></td>
+                            <td><a class="btn btn-primary" id="botonInicio" href="eliminar.php?id=<?php echo $rowCliente['ID']; ?>" onclick="return confirmDelete()">Eliminar</a></td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
             </table>
-            <button type="button" onclick="redirAgregarUsuario()">Agregar Usuario</button>
+            <button type="button" class="btn btn-primary" id="botonInicio" onclick="redirAgregarUsuario()">Agregar Usuario</button>
         </div>
     </div>
     
     <div>
         <h2>Citas</h2>
         <div>
-            <table>
+            <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>ID_Cliente</th>
-                        <th>Usuario</th>
-                        <th>Dirección</th>
-                        <th>Fecha</th>
-                        <th>Material</th>
-                        <th>Kilos</th>
-                        <th>Estatus</th>
-                        <th>Acciones</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">ID_Cliente</th>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Material</th>
+                        <th scope="col">Kilos</th>
+                        <th scope="col">Estatus</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php while($rowCita = mysqli_fetch_array($qCitas)): ?>
                         <tr>
-                            <td><?php echo $rowCita['IDcitas']; ?></td>
+                            <td scope="row"><?php echo $rowCita['IDcitas']; ?></td>
                             <td><?php echo $rowCita['ID']; ?></td>
                             <td><?php echo obtenerUsuario($rowCita['ID'], $con); ?></td>
                             <td><?php echo $rowCita['DIRECCION']; ?></td>
@@ -126,7 +126,7 @@ $qCitas = mysqli_query($con, $sqlCitas);
     </div>
     
     <div>
-        <button type="button" onclick="redireccion()">Cerrar sesión</button>
+        <button type="button" class="btn btn-primary" id="botonInicio" onclick="redireccion()">Cerrar sesión</button>
     </div>
     
 
