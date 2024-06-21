@@ -1,27 +1,33 @@
 <?php
-session_start(); //Iniciamos la sesión
-if (!isset($_SESSION['user'])) {
-    header("Location: ../sesion.html");
-    exit();
-}
-include("conexion.php");
-$con = mysqli_connect($server, $user, $pass, $db);
-if (!isset($_GET['id'])) {
-    echo "ID de cliente no proporcionado.";
-    exit();
-}
-$id = $_GET['id'];
-$sql = "SELECT * FROM clientes WHERE ID = '$id'";
-$q = mysqli_query($con, $sql);
-if (mysqli_num_rows($q) == 0) {
-    echo "Cliente no encontrado.";
-    exit();
-}
-$row = mysqli_fetch_array($q);
+    session_start();
+    if (!isset($_SESSION['user']) || !isset($_SESSION['user']['id'])) {
+        header("Location: ../sesion.html");
+        exit();
+    }
+    if (!isset($_GET['id'])) {
+        echo "ID de cliente no proporcionado.";
+        exit();
+    }
+    $id = $_GET['id'];
+    if ($_SESSION['user']['id'] != $id) {
+        echo "No tienes permiso para acceder a este cliente.";
+        exit();
+    }
+    include("conexion.php");
+    $con = mysqli_connect($server, $user, $pass, $db);
+    $sql = "SELECT * FROM clientes WHERE ID = ?";
+    $stmt = mysqli_prepare($con, $sql);
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    if (mysqli_num_rows($result) == 0) {
+        echo "Cliente no encontrado.";
+        exit();
+    }
+    $row = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,10 +37,7 @@ $row = mysqli_fetch_array($q);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="../src/diseñosForms.css">
 </head>
-
 <body>
-
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="../index.html"><img src="../Imagen/1.png" style="height: 50px;" alt="Logo1"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,15 +57,12 @@ $row = mysqli_fetch_array($q);
             </ul>
         </div>
     </nav>
-
     <div style="text-align: center;">
         <br>
         <h1>Bienvenido <?php echo $row['USUARIO']; ?>!!!</h1>
     </div>
-
     <div class="contenedores">
         <h2>Historial de citas</h2>
-
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -94,16 +94,12 @@ $row = mysqli_fetch_array($q);
             <button type="button" class="btn btn-danger" onclick="redireccion()">Cerrar sesion</button>
         </div>
     </div>
-
-
-
     <script src="../js/admin.js"></script>
     <script>
         function cita(id) {
             location.href = "./cita.php?id=" + id;
         }
     </script>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -128,5 +124,4 @@ $row = mysqli_fetch_array($q);
         </div>
     </footer>
 </body>
-
 </html>

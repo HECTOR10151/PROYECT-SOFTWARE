@@ -7,7 +7,6 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-
 document.addEventListener('DOMContentLoaded', function() {
     var error = getParameterByName('error');
     if (error === '1') {
@@ -32,3 +31,4 @@ function out(){
 function re(id) {
     location.href = "./cliente.php?id=" + id;
 }
+

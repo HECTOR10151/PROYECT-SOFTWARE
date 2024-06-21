@@ -1,6 +1,6 @@
 <?php
 session_start(); // Iniciamos la sesión
-if (!isset($_SESSION['user']) || $_SESSION['user'] != "admin") {
+if (!isset($_SESSION['user']) || !isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
     header("Location: ../sesion.html");
     exit();
 }
@@ -127,14 +127,10 @@ $qCitas = mysqli_query($con, $sqlCitas);
                 </tbody>
             </table>
             <br><br>
-        <button type="button" class="btn btn-danger"  onclick="redireccion()">Cerrar sesión</button>
-    
+            <button type="button" class="btn btn-danger" onclick="pdf()">Generar reporte</button>
+            <button type="button" class="btn btn-danger"  onclick="redireccion()">Cerrar sesión</button>
         </div>
     </div>
-
-    
-
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -159,10 +155,17 @@ $qCitas = mysqli_query($con, $sqlCitas);
         </div>
     </footer>
     <script src="../js/admin.js"></script>
+    <script>
+        function redirAgregarUsuario(){
+            location.href = "../formulario.html?admin=true";
+            exit();
+        }
+        function pdf(){
+            location.href = "./genera.php";
+        }
+</script>
 </body>
-
 </html>
-
 <?php
 function obtenerUsuario($idCliente, $con)
 {

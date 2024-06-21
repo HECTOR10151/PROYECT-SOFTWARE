@@ -60,25 +60,25 @@ $row = mysqli_fetch_array($q);
     </div>
 
     <div class="formularioNuevoUsuario">
-        <form action="./citas.php" method="POST">
+        <form action="./citas.php" method="POST" onsubmit="return validarFormulario()">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="card-body nuevoUsuario">
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Direccion" name="direccion"><br>
+                    <input class="form-control" type="text" placeholder="Direccion" name="direccion" id="direccion"><br>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="date" name="date"><br>
+                    <input class="form-control" type="date" name="date" id="date"><br>
                 </div>
                 <div class="form-row">
                     <div class="col">
-                        <input class="form-control" type="text" placeholder="Material" name="material"><br>
+                        <input class="form-control" type="text" placeholder="Material" name="material" id="material"><br>
                     </div>
                     <div class="col">
-                        <input class="form-control" type="number" placeholder="Kilogramos" name="kilos"><br>
+                        <input class="form-control" type="number" placeholder="Kilogramos" name="kilos" id="kilos"><br>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="tel" placeholder="Telefono" name="telefono"><br>
+                    <input class="form-control" type="tel" placeholder="Telefono" name="telefono" id="telefono"><br>
                 </div>
                 <div class="form-group">
 
@@ -86,16 +86,25 @@ $row = mysqli_fetch_array($q);
                     <button type="button" class="btn btn-danger" onclick="re(<?php echo $id; ?>)">Cancelar</button>
                 </div>
             </div>
-
-
         </form>
     </div>
     <div>
-
     </div>
     <script>
         function re(id) {
             location.href = "./cliente.php?id=" + id;
+        }
+        function validarFormulario() {
+            var date = document.getElementById("date").value;
+            var material = document.getElementById("material").value;
+            var kilos = document.getElementById("kilos").value;
+            var direccion = document.getElementById("direccion").value;
+            var telefono = document.getElementById("telefono").value;
+            if (date === "" || material === "" ||kilos === "" || direccion === "" || email === "" || telefono === "") {
+                alert("Todos los campos deben estar llenos");
+                return false;
+            }
+            return true;
         }
     </script>
 
